@@ -144,7 +144,7 @@ func (server *Server) handleRequest(cc codec.Codec, req *request, sending *sync.
 	// TODO: should call registered rpc methods to get the right replyv.
 	// day 1, just print argv and send a hello message.
 	defer wg.Done()
-	log.Println(req.h, req.argv.Elem())
+	log.Println("rpc server: handle request:", req.h, req.argv.Elem())
 	req.replyv = reflect.ValueOf(fmt.Sprintf("gee rpc resp: %d", req.h.Seq))
 	server.sendResponse(cc, req.h, req.replyv.Interface(), sending)
 }

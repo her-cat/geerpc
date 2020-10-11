@@ -14,6 +14,7 @@ func startServer(addr chan string)  {
 	if err != nil {
 		log.Fatal("network error: ", err)
 	}
+	log.Println("start rpc server on", l.Addr())
 	addr <- l.Addr().String()
 	geerpc.Accept(l)
 }
