@@ -17,7 +17,7 @@ type Call struct {
 	Args			interface{}	// arguments of the function.
 	Reply			interface{}	// reply of the function.
 	Error 			error		// if error occurs, it will be set.
-	Done			chan *Call // Strobes when call is complete.
+	Done			chan *Call  // Strobes when call is complete.
 }
 
 func (call *Call) done() {
