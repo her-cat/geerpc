@@ -252,7 +252,7 @@ func (server *Server) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	_, _ = io.WriteString(w, "HTTP/1.0 " + connected + "\n\n")
+	_, _ = io.WriteString(conn, "HTTP/1.0 " + connected + "\n\n")
 	server.ServeConn(conn)
 }
 
